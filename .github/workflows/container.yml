@@ -5,11 +5,11 @@ on:
     braches:
       - master
     paths:
-      - "packages/container/**"
+      - "container/**"
 
 defaults:
   run:
-    working-directory: packages/container
+    working-directory: container
 
 jobs:
   build:
