@@ -7,6 +7,10 @@ on:
     paths:
       - "container/**"
 
+  defaults:
+    run:
+      working-directory: container
+
   workflow_dispatch:
 
 jobs:
