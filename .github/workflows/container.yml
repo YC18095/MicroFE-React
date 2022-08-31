@@ -16,7 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm install
+      - working-directory: container
       - run: npm run build
+      - working-directory: container
 
       - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
