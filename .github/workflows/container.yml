@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "/container/**"
+    artifacts:
+      paths:
+        - "/container/**"
 
   workflow_dispatch:
 
