@@ -9,6 +9,7 @@ on:
 
   workflow_dispatch:
 
+#all the command will be run in the container folder.
 defaults:
   run:
     working-directory: container
