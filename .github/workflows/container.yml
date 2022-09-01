@@ -4,11 +4,14 @@ on:
   push:
     branches:
       - master
-    artifacts:
-      paths:
-        - "/container/**"
+    paths:
+      - "container/**"
 
   workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: container
 
 jobs:
   build:
@@ -20,9 +23,7 @@ jobs:
         with:
           node-version: 14
       - run: npm install
-        working-directory: container
       - run: npm run build
-        working-directory: container
 
       - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
