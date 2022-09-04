@@ -3,6 +3,7 @@ const ModuleFederation = require("webpack/lib/container/ModuleFederationPlugin")
 const packageJson = require("../package.json");
 const commonConfig = require("./webpack.common");
 
+//domail name here is CloudFront domain name for deployment we specify this in our environment secret key
 const domain = process.env.PRODUCTION_DOMAIN;
 
 const prodConfig = {
@@ -15,6 +16,7 @@ const prodConfig = {
     new ModuleFederation({
       name: "container",
       remotes: {
+        //domail name here is CloudFront domain name for deployment we specify this in our environment secret key
         marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
