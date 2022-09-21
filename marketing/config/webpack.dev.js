@@ -8,7 +8,7 @@ const devConfig = {
   devServer: {
     port: 8081,
     historyApiFallback: {
-      index: "index.html",
+      index: "/index.html",
     },
   },
   plugins: [
@@ -18,8 +18,8 @@ const devConfig = {
       exposes: {
         "./Marketing": "./src/bootstrap",
       },
-      shared: ['react', 'react-dom']
-    })
+      shared: ["react", "react-dom"],
+    }),
   ],
 };
 
