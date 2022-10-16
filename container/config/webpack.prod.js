@@ -18,6 +18,7 @@ const prodConfig = {
       remotes: {
         //domail name here is CloudFront domain name for deployment we specify this in our environment secret key
         auth: `auth@${domain}/auth/latest/remoteEntry.js`,
+        dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
         marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
