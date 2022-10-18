@@ -1,5 +1,4 @@
 const { VueLoaderPlugin } = require("vue-loader");
-import path from "path";
 
 module.exports = {
   entry: "./src/index.js",
@@ -7,9 +6,6 @@ module.exports = {
     filename: "[name].[contenthash].js",
   },
   resolve: {
-    alias: {
-      components: path.resolve(__dirname, "src/components"),
-    },
     extensions: [".js", ".vue"],
   },
   module: {
